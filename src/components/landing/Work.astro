@@ -1,0 +1,94 @@
+---
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+
+const roles = [
+  {
+    company: "Paro AI",
+    title: "Senior Director - Product & Engineering",
+    years: "May 2023 — June 2023",
+    link: "#_",
+  },
+  {
+    company: "Paro AI",
+    title: "Director - Product & Engineering",
+    years: "November 2020 — April 2023",
+    link: "#_",
+  },
+  {
+    company: "Paro AI",
+    title: "Principal Engnieer",
+    years: "August 2018 — June 2020",
+    link: "#_",
+  },
+  {
+    company: "CancerIQ",
+    title: "Software Engineer",
+    years: "August 2014 — June 2014",
+    link: "#_",
+  },
+  
+];
+---
+
+<section id="work" class="scroll-mt-12">
+  <Wrapper variant="base" class="py-8 2xl:py-16">
+    <div class="w-full grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div>
+        <Text
+          tag="h2"
+          variant="textMD"
+          class="font-medium text-zinc-800 animate-text dark:text-zinc-200"
+        >
+          Work
+        </Text>
+        <Text
+          tag="p"
+          variant="textSM"
+          class="font-medium text-zinc-500 animate-text dark:text-zinc-400"
+        >
+          A selection of featured projects
+        </Text>
+      </div>
+      <div class="lg:col-span-2 divide-y gap-4 flex flex-col divide-black/5">
+        {
+          roles.map((role, index) => (
+            <a
+              href={role.link}
+              class={`pb-4 group w-full animate-text`}
+              data-delay={index * 100}
+            >
+              <div class="flex items-center justify-between w-full">
+                <Text
+                  tag="h4"
+                  variant="textBase"
+                  class="text-zinc-800 group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white duration-300 flex items-center"
+                >
+                  {role.company}
+                </Text>
+                <span class="ml-2 text-transparent group-hover:text-current duration-300">
+                  →
+                </span>
+              </div>
+              <div class="text-zinc-500 text-balance mt-2 dark:text-zinc-400">
+                <Text tag="p" variant="textSM">
+                  {role.title}
+                </Text>
+                <Text tag="p" variant="textSM" class="mt-8">
+                  {role.years}
+                </Text>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </Wrapper>
+
+  <script type="module">
+    import { setupTextAnimation } from "../scripts/textReveal.js";
+    document.addEventListener("DOMContentLoaded", () => {
+      setupTextAnimation();
+    });
+  </script>
+</section>

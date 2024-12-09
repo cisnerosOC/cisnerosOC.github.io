@@ -1,0 +1,102 @@
+---
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+const talks = [
+  {
+    name: "Designing for Accessibility",
+    description:
+      "A deep dive into creating accessible and inclusive user experiences.",
+    year: "2023",
+    link: "#_",
+  },
+  {
+    name: "The Future of UI Design",
+    description:
+      "Exploring trends and technologies shaping the next generation of user interfaces.",
+    year: "2022",
+    link: "#_",
+  },
+  {
+    name: "Mastering Tailwind CSS",
+    description:
+      "An advanced guide to building fast and responsive layouts with Tailwind CSS.",
+    year: "2022",
+    link: "#_",
+  },
+  {
+    name: "Web Performance Best Practices",
+    description:
+      "Learn how to optimize web applications for speed and scalability.",
+    year: "2021",
+    link: "#_",
+  },
+  {
+    name: "The Art of SVG in Web Design",
+    description:
+      "Harnessing the power of SVG for scalable, interactive, and engaging designs.",
+    year: "2021",
+    link: "#_",
+  },
+];
+---
+
+<section id="talks" class="scroll-mt-12">
+  <Wrapper variant="base" class="py-8 2xl:py-16 border-t">
+    <div class="w-full grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div>
+        <Text
+          tag="h2"
+          variant="textMD"
+          class="font-medium text-zinc-800 dark:text-zinc-200"
+        >
+          Talks
+        </Text>
+        <Text
+          tag="p"
+          variant="textSM"
+          class="font-medium text-zinc-500 dark:text-zinc-400"
+        >
+          Presentations and sessions I've delivered
+        </Text>
+      </div>
+      <div class="lg:col-span-2 divide-y gap-4 flex flex-col divide-black/5">
+        {
+          talks.map((talk, index) => (
+            <a
+              href={talk.link}
+              class={`pb-4 group w-full animate-text`}
+              data-delay={index * 100}
+            >
+              <div class="flex items-center justify-between w-full">
+                <Text
+                  tag="h4"
+                  variant="textBase"
+                  class="text-zinc-80 group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white duration-300 flex items-center"
+                >
+                  {talk.name}
+                </Text>
+                <span class="ml-2 text-transparent group-hover:text-current duration-300">
+                  →
+                </span>
+              </div>
+              <div class="text-zinc-500 text-pretty mt-2 dark:text-zinc-400 ">
+                <Text tag="p" variant="textSM">
+                  {talk.description}
+                </Text>
+                <Text tag="p" variant="textSM" class="mt-8">
+                  {talk.year}
+                </Text>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </Wrapper>
+</section>
+<script type="module">
+  import { setupTextAnimation } from "../scripts/textReveal.js";
+  document.addEventListener("DOMContentLoaded", () => {
+    setupTextAnimation();
+  });
+</script>

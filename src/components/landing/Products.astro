@@ -1,0 +1,119 @@
+---
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+const products = [
+  {
+    name: "Lexington Themes",
+    description:
+      "Free and premium multipage themes and UI Kits for freelancers, developers, businesses, and personal use. Beautifully crafted with Astro.js and Tailwind CSS—simple and easy to customize.",
+    launchYear: "2023",
+    link: "https://lexingtonthemes.com",
+  },
+  {
+    name: "Oxbow UI",
+    description:
+      "Free and premium components and UI blocks, beautifully crafted with Tailwind CSS and Alpine JS—simple and easy to customize.",
+    launchYear: "2023",
+    link: "https://oxbowui.com",
+  },
+  {
+    name: "Colors & Fonts",
+    description:
+      "Color and typography tools for web developers and digital designers, offering curated palettes, gradients, and typography resources.",
+    launchYear: "2019",
+    link: "https://colorsandfonts.com",
+  },
+  {
+    name: "SVG Doodles",
+    description:
+      "A free collection of editable SVGs to enhance your online and offline designs.",
+    launchYear: "2020",
+    link: "https://svgdoodles.com",
+  },
+  {
+    name: "Wireframe Wizard",
+    description:
+      "A wireframing tool for creating quick prototypes and low-fidelity mockups for design projects.",
+    launchYear: "2021",
+    link: "",
+  },
+  {
+    name: "Gradient Studio",
+    description:
+      "A gradient creation tool with custom presets for designers and developers.",
+    launchYear: "2020",
+    link: "",
+  },
+  {
+    name: "Component Crafter",
+    description:
+      "A library of reusable components designed for modern front-end frameworks.",
+    launchYear: "2022",
+    link: "",
+  },
+  {
+    name: "Typography Toolkit",
+    description:
+      "A tool for generating beautiful and accessible typography systems for web projects.",
+    launchYear: "2023",
+    link: "",
+  },
+];
+---
+
+<section id="products" class="scroll-mt-12">
+  <Wrapper variant="base" class="py-8 2xl:py-16 border-t">
+    <div class="w-full grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div>
+        <Text
+          tag="h2"
+          variant="textMD"
+          class="font-medium text-zinc-800 dark:text-zinc-200"
+        >
+          Products
+        </Text>
+        <Text tag="p" variant="textSM" class="font-medium text-zinc-500">
+          Things I've designed and developed
+        </Text>
+      </div>
+      <div class="lg:col-span-2 divide-y gap-4 flex flex-col divide-black/5">
+        {
+          products.map((product, index) => (
+            <a
+              href={product.link}
+              class={`pb-4 group w-full animate-text`}
+              data-delay={index * 100}
+            >
+              <div class="flex items-center justify-between w-full">
+                <Text
+                  tag="h4"
+                  variant="textBase"
+                  class="text-zinc-80 group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white duration-300 flex items-center"
+                >
+                  {product.name}
+                </Text>
+                <span class="ml-2 text-transparent group-hover:text-current duration-300">
+                  →
+                </span>
+              </div>
+              <div class="text-zinc-500 text-pretty mt-2 dark:text-zinc-400">
+                <Text tag="p" variant="textSM">
+                  {product.description}
+                </Text>
+                <Text tag="p" variant="textSM" class="mt-8">
+                  {product.launchYear}
+                </Text>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </Wrapper>
+</section>
+<script type="module">
+  import { setupTextAnimation } from "../scripts/textReveal.js";
+  document.addEventListener("DOMContentLoaded", () => {
+    setupTextAnimation();
+  });
+</script>

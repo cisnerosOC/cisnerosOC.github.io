@@ -1,0 +1,55 @@
+---
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+---
+
+<section id="about" class="scroll-mt-12">
+  <Wrapper variant="base" class="py-8">
+    <div class="w-full grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div>
+        <Text
+          tag="h2"
+          variant="textBase"
+          class="font-medium text-zinc-800 animate-text dark:text-zinc-200"
+        >
+          About
+        </Text>
+        <Text
+          tag="p"
+          variant="textSM"
+          class="font-medium text-zinc-500 animate-text dark:text-zinc-400"
+        >
+          Welcome!
+        </Text>
+      </div>
+      <div class="lg:col-span-2 gap-4 flex flex-col">
+        <div class="text-zinc-500 dark:text-zinc-400">
+          <Text tag="p" variant="textSM">
+            Hi, I'm Oscar Cisneros Jr, a dynamic technology leader with over a decade of experience building and scaling high-performing engineering teams. I specialize in designing innovative software solutions, driving digital transformation, and fostering collaboration across diverse teams.
+          </Text>
+          <Text tag="p" variant="textSM" class="mt-2">
+            Throughout my career, I've had the privilege of contributing to groundbreaking projects, from modernizing cloud infrastructures to developing HIPAA-compliant applications that improve patient care. As a hands-on leader, I thrive on solving complex challenges, mentoring engineers, and creating a culture where innovation and excellence can flourish.
+          </Text>
+
+          <Text tag="p" variant="textSM">
+          I am passionate about leveraging technology to create impactful solutions while promoting inclusivity in tech. As the founder of the Code Latino Meetup Group, I've worked to elevate LatinX representation in the tech industry and build a supportive community for aspiring technologists.
+          </Text>
+          <Text tag="p" variant="textSM">  
+          When I'm not building software or leading teams, you'll find me exploring emerging technologies, mentoring the next generation of engineers, or advocating for diversity and equity in the workplace.
+          </Text>
+
+          <Text tag="p" variant="textSM">
+          Feel free to connect with me to discuss technology, leadership, or opportunities to collaborate. Let's build something incredible together!
+          </Text>
+          <Text tag="p" variant="textSM" class="mt-2">
+            Thank you for visiting! Let's build something remarkable together.
+          </Text>
+
+          <div class="border-zinc-200 border-t mt-8 pt-8 dark:border-zinc-700">
+            <Text tag="p" variant="textSM"> Oscar Cisneros Jr </Text>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Wrapper>
+</section>

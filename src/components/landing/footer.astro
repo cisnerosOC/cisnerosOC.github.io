@@ -1,0 +1,47 @@
+---
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+
+const socialLinks = [
+  {
+    platform: "LinkedIn",
+    url: "https://www.linkedin.com/in/oscarcisnerosjr/",
+  },
+  {
+    platform: "GitHub",
+    url: "https://github.com/cisnerosOC",
+  },
+  
+];
+---
+
+<footer id="social-links" class="scroll-mt-12">
+  <Wrapper variant="base" class="py-8 2xl:py-16 border-t">
+    <div
+      class="flex flex-col justify-between gap-8 lg:flex-row lg:items-center"
+    >
+      <Text
+        tag="h2"
+        variant="textBase"
+        class="font-medium text-zinc-800 dark:text-zinc-200"
+      >
+        <!-- Oscar Cisneros Jr -->
+      </Text>
+      <div class="flex gap-4 lg:justify-end">
+        {
+          socialLinks.map((link) => (
+            <a href={link.url} class="group">
+              <Text
+                tag="span"
+                variant="textBase"
+                class="text-zinc-800 hover:text-black duration-300 flex items-center dark:text-zinc-200 dark:hover:text-white"
+              >
+                {link.platform}
+              </Text>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </Wrapper>
+</footer>

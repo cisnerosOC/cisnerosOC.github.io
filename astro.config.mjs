@@ -1,11 +1,19 @@
 import { defineConfig } from "astro/config"
 import tailwindcss from "@tailwindcss/vite"
 import sitemap from "@astrojs/sitemap"
+import partytown from "astro-partytown"
+
 export default defineConfig({
-  site: "https://centric.io",
+  site: "https://centrico.io",
   vite: {
     plugins: [tailwindcss()],
   },
-  site: "https://yourdomain.com",
-  integrations: [sitemap()],
+  integrations: [
+    sitemap(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+  ],
 })

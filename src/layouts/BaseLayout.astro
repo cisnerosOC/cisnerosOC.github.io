@@ -4,6 +4,15 @@ import BaseHead from "@/components/BaseHead.astro";
 
 <html lang="en" class="scroll-smooth">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-6KCKMGWR5H"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+      gtag('config', 'G-6KCKMGWR5H');
+    </script>
     <BaseHead />
   </head>
   <body class="bg-zinc-50 dark:bg-zinc-900">
